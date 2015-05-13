@@ -15,7 +15,7 @@ angular.module('synbioz.angular-c3js', [])
       // data
       x: '@',
       order: '@',
-      labels: '@',
+      labels: '=',
       type: '@',
       axes: '=',
       colors: '=',
@@ -116,8 +116,8 @@ angular.module('synbioz.angular-c3js', [])
           $scope.config.data.order = $scope.order || 'desc';
         }
 
-        if($scope.labels === 'true') {
-          $scope.config.data.labels = true;
+        if($scope.labels) {
+          $scope.config.data.labels = $scope.labels;
         }
 
         if($scope.type) {
